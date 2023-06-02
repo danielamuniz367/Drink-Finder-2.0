@@ -10,8 +10,8 @@ export default function DrinkImageName({
   strDrinkThumb,
 }: DrinkImageNameProps) {
   return (
-    <Flex direction="row">
-      <Image boxSize="40px" src={strDrinkThumb} />
+    <Flex direction="row" gap={2}>
+      <Image borderRadius="full" boxSize="40px" src={strDrinkThumb} />
       <Text fontSize="xl">{strDrink}</Text>
     </Flex>
   );

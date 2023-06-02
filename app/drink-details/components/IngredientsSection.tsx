@@ -14,8 +14,8 @@ export interface IngredientsMeasurmentsListProps {
 export default function IngredientsSection({
   list,
 }: IngredientsMeasurmentsListProps) {
-  const listItems = list.map((ing) => (
-    <ListItem>
+  const listItems = list.map((ing, i) => (
+    <ListItem key={`ingredient-${i}`}>
       {ing.ingredient}
       {ing.measurement}
     </ListItem>

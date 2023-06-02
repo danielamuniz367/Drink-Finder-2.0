@@ -5,6 +5,8 @@ import { Box, Flex } from "@chakra-ui/react";
 import IngredientsSection from "./IngredientsSection";
 import Instructions from "./Instructions";
 import { DrinkProps } from "@/app/components/ResultsList";
+import Header from "./BackButton";
+import HeaderWrapper from "@/app/components/HeaderWrapper";
 
 export interface IngredientsMeasurmentsProps {
   ingredient: string | null | undefined;
@@ -36,6 +38,9 @@ export default function DrinkDetails(drinkDetails: DrinkProps) {
 
   return (
     <Box>
+      <HeaderWrapper>
+        <Header />
+      </HeaderWrapper>
       <DrinkImageName strDrink={strDrink} strDrinkThumb={strDrinkThumb} />
       <IngredientsSection list={ingdtsMsrmtsMerged} />
       <Instructions strInstructions={strInstructions} />

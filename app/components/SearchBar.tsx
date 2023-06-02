@@ -1,7 +1,7 @@
 import { Input } from "@chakra-ui/react";
 
 interface SearchBarProps {
-  searchText: string;
+  searchText: string | undefined;
   onSearchTextChange: (arg: string) => void;
 }
 
@@ -14,6 +14,10 @@ export default function SearchBar({
       value={searchText}
       placeholder="Find a drink..."
       onChange={(e) => onSearchTextChange(e.target.value)}
+      bg="white"
+      m="auto"
+      size="md"
+      variant="outline"
     />
   );
 }

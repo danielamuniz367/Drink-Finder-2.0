@@ -1,9 +1,6 @@
-import DrinkSearch from "./components/DrinkSearch";
-import Header from "./components/Header";
 import "./globals.css";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import styles from "./page.module.css";
+import { Providers } from "./providers";
 
 export const metadata = {
   title: "Create Next App",
@@ -17,9 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Header />
-        {children}
+      <body className={styles.main}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

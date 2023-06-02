@@ -60,8 +60,10 @@ export interface ResultsProps {
 }
 
 export default function ResultsList({ drinks }: ResultsProps) {
-  if (!drinks) return <Container>No drinks found</Container>;
-  const listItems = drinks?.map((drink) => <Result {...drink} />);
+  if (!drinks) return <Container m="0">No drinks found</Container>;
+  const listItems = drinks?.map((drink, i) => (
+    <Result key={`drink-${i}`} {...drink} />
+  ));
 
-  return <UnorderedList>{listItems}</UnorderedList>;
+  return <UnorderedList m={0}>{listItems}</UnorderedList>;
 }

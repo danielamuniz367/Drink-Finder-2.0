@@ -1,14 +1,17 @@
 "use client";
 
-import NextLink from "next/link";
-import { Heading, Link } from "@chakra-ui/react";
+import { Flex, Heading, Image } from "@chakra-ui/react";
+import CocktailIcon from "./CocktailIcon";
 
 export default function Header() {
   return (
-    <Heading>
-      <Link as={NextLink} href="/">
+    <Heading m="1rem">
+      <Flex gap={2} align="center">
+        <i style={{ color: "pink" }}>
+          <CocktailIcon width="48px" height="48px" backgroundColor="white" />
+        </i>
         Thirsty Drink Finder
-      </Link>
+      </Flex>
     </Heading>
   );
 }
