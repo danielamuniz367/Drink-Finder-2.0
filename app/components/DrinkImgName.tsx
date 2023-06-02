@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
 export interface DrinkImageNameProps {
   strDrink: string;

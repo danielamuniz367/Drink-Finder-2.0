@@ -1,6 +1,4 @@
-import { DrinkImageNameProps } from "@/app/components/DrinkImgName";
 import DrinkDetails from "../components/DrinkDetails";
-import { DrinkProps } from "@/app/components/ResultsList";
 
 async function getData(idDrink: string) {
   const res = await fetch(

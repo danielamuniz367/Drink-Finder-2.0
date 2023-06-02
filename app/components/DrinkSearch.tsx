@@ -1,6 +1,6 @@
 "use client";
 import useSWR from "swr";
-import { Flex, Input } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import ResultsList from "./ResultsList";
 import { ReactNode, useState } from "react";
 import { useDebounce } from "usehooks-ts";
