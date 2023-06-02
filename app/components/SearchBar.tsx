@@ -16,8 +16,10 @@ export default function SearchBar({
       onChange={(e) => onSearchTextChange(e.target.value)}
       bg="white"
       m="auto"
-      size="md"
+      size="lg"
+      height="3.5rem"
       variant="outline"
+      w={["100%", 500]}
     />
   );
 }

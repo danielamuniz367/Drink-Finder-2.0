@@ -1,14 +1,17 @@
 "use client";
 
 import NextLink from "next/link";
-import { Heading, Link } from "@chakra-ui/react";
-import { ArrowBackIcon } from "@chakra-ui/icons";
+import { Flex, Heading, Link } from "@chakra-ui/react";
+import { ArrowLeftIcon } from "@chakra-ui/icons";
+import CocktailIcon from "@/app/components/CocktailIcon";
 
 export default function BackButton() {
   return (
-    <Heading size="md">
+    <Heading size="md" ml={4}>
       <Link as={NextLink} href="/">
-        <ArrowBackIcon /> Back to drink search
+        <Flex alignItems="center" direction="row" gap={2}>
+          <ArrowLeftIcon />
+        </Flex>
       </Link>
     </Heading>
   );

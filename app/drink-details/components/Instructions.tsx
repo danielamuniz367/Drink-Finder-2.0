@@ -5,5 +5,9 @@ interface InstructionsProps {
 }
 
 export default function Instructions({ strInstructions }: InstructionsProps) {
-  return <Container>{strInstructions}</Container>;
+  return (
+    <Container m={0} p={4}>
+      {strInstructions}
+    </Container>
+  );
 }

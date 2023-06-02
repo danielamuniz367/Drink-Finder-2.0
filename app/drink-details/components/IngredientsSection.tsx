@@ -16,15 +16,16 @@ export default function IngredientsSection({
 }: IngredientsMeasurmentsListProps) {
   const listItems = list.map((ing, i) => (
     <ListItem key={`ingredient-${i}`}>
-      {ing.ingredient}
-      {ing.measurement}
+      {ing.ingredient} ({ing.measurement})
     </ListItem>
   ));
   return (
-    <Flex direction="column">
-      <Heading>Ingredients</Heading>
-      <Container>
-        <UnorderedList>{listItems}</UnorderedList>
+    <Flex direction="column" p={4}>
+      <Heading size="md">Ingredients</Heading>
+      <Container m={0} p={0}>
+        <UnorderedList listStyleType="none" m={0}>
+          {listItems}
+        </UnorderedList>
       </Container>
     </Flex>
   );

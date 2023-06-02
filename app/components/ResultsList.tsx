@@ -58,7 +58,6 @@ export interface DrinkProps {
 export interface ResultsProps {
   drinks: DrinkProps[];
 }
-
 export default function ResultsList({ drinks }: ResultsProps) {
   if (!drinks) return <Container m="0">No drinks found</Container>;
   const listItems = drinks?.map((drink, i) => (

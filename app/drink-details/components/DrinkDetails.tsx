@@ -5,8 +5,10 @@ import { Box, Flex } from "@chakra-ui/react";
 import IngredientsSection from "./IngredientsSection";
 import Instructions from "./Instructions";
 import { DrinkProps } from "@/app/components/ResultsList";
-import Header from "./BackButton";
+import BackButton from "./BackButton";
 import HeaderWrapper from "@/app/components/HeaderWrapper";
+import BodyWrapper from "@/app/components/BodyWrapper";
+import { useRef } from "react";
 
 export interface IngredientsMeasurmentsProps {
   ingredient: string | null | undefined;
@@ -15,6 +17,7 @@ export interface IngredientsMeasurmentsProps {
 
 export default function DrinkDetails(drinkDetails: DrinkProps) {
   const { strDrink, strDrinkThumb, strInstructions } = drinkDetails;
+  const ref = useRef<HTMLInputElement>(null);
 
   // gather ingredients and measurements
   const ingredients = Object.keys(drinkDetails)
@@ -38,12 +41,18 @@ export default function DrinkDetails(drinkDetails: DrinkProps) {
 
   return (
     <Box>
-      <HeaderWrapper>
-        <Header />
+      <HeaderWrapper refHeight={ref}>
+        <BackButton />
       </HeaderWrapper>
-      <DrinkImageName strDrink={strDrink} strDrinkThumb={strDrinkThumb} />
-      <IngredientsSection list={ingdtsMsrmtsMerged} />
-      <Instructions strInstructions={strInstructions} />
+      <BodyWrapper>
+        <DrinkImageName
+          strDrink={strDrink}
+          strDrinkThumb={strDrinkThumb}
+          result={true}
+        />
+        <IngredientsSection list={ingdtsMsrmtsMerged} />
+        <Instructions strInstructions={strInstructions} />
+      </BodyWrapper>
     </Box>
   );
 }

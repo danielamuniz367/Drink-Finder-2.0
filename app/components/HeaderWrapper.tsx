@@ -1,14 +1,26 @@
-import { Box } from "@chakra-ui/react";
-import { ReactElement } from "react";
+import { Flex } from "@chakra-ui/react";
+import { Ref, forwardRef } from "react";
 
 interface HeaderWrapperProps {
   children: React.ReactNode;
+  refHeight: any;
 }
 
-export default function HeaderWrapper({ children }: HeaderWrapperProps) {
+const HeaderWrapper = forwardRef(function HeaderWrapper({
+  children,
+  refHeight,
+}: HeaderWrapperProps) {
   return (
-    <Box minH="5em" bg="#374259" color="white">
+    <Flex
+      minH="5em"
+      bg="#68A7AD"
+      color="white"
+      alignItems="center"
+      ref={refHeight}
+    >
       {children}
-    </Box>
+    </Flex>
   );
-}
+});
+
+export default HeaderWrapper;
