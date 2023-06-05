@@ -1,4 +1,4 @@
-import { Container, UnorderedList } from "@chakra-ui/react";
+import { Box, UnorderedList } from "@chakra-ui/react";
 import Result from "./Result";
 
 export interface DrinkProps {
@@ -59,7 +59,7 @@ export interface ResultsProps {
   drinks: DrinkProps[];
 }
 export default function ResultsList({ drinks }: ResultsProps) {
-  if (!drinks) return <Container m="0">No drinks found</Container>;
+  if (!drinks) return <Box m="0">No drinks found</Box>;
   const listItems = drinks?.map((drink, i) => (
     <Result key={`drink-${i}`} {...drink} />
   ));

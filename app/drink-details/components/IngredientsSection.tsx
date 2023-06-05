@@ -1,8 +1,8 @@
 import {
-  Container,
   Flex,
   Heading,
   ListItem,
+  Stack,
   UnorderedList,
 } from "@chakra-ui/react";
 import { IngredientsMeasurmentsProps } from "./DrinkDetails";
@@ -20,13 +20,11 @@ export default function IngredientsSection({
     </ListItem>
   ));
   return (
-    <Flex direction="column" p={4}>
+    <Stack>
       <Heading size="md">Ingredients</Heading>
-      <Container m={0} p={0}>
-        <UnorderedList listStyleType="none" m={0}>
-          {listItems}
-        </UnorderedList>
-      </Container>
-    </Flex>
+      <UnorderedList listStyleType="none" m={0}>
+        {listItems}
+      </UnorderedList>
+    </Stack>
   );
 }

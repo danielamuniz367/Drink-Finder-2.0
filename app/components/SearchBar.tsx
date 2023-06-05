@@ -1,4 +1,5 @@
-import { Input } from "@chakra-ui/react";
+import { SearchIcon } from "@chakra-ui/icons";
+import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 
 interface SearchBarProps {
   searchText: string | undefined;
@@ -10,16 +11,20 @@ export default function SearchBar({
   onSearchTextChange,
 }: SearchBarProps) {
   return (
-    <Input
-      value={searchText}
-      placeholder="Find a drink..."
-      onChange={(e) => onSearchTextChange(e.target.value)}
-      bg="white"
-      m="auto"
-      size="lg"
-      height="3.5rem"
-      variant="outline"
-      w={["100%", 500]}
-    />
+    <InputGroup m="auto" mt={[0, "20px"]} w={["100%", 500]} alignItems="center">
+      {" "}
+      <Input
+        value={searchText}
+        bg="white"
+        placeholder="Find a drink..."
+        onChange={(e) => onSearchTextChange(e.target.value)}
+        size="lg"
+        height="3.5rem"
+        focusBorderColor="teal.400"
+      />
+      <InputRightElement top="auto">
+        <SearchIcon />
+      </InputRightElement>
+    </InputGroup>
   );
 }

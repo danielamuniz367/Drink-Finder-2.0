@@ -9,8 +9,8 @@ export default function Result(props: DrinkProps) {
     <ListItem
       listStyleType="none"
       p=".5rem"
-      borderBottom="1px solid lightskyblue"
-      _hover={{ backgroundColor: "blue.100" }}
+      borderBottom="1px solid #58ABAE"
+      _hover={{ backgroundColor: "#FAF4F0" }}
     >
       <Link href={`drink-details/${idDrink}`}>
         <DrinkImageName strDrink={strDrink} strDrinkThumb={strDrinkThumb} />

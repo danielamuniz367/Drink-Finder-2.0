@@ -3,7 +3,7 @@ import { Ref, forwardRef } from "react";
 
 interface HeaderWrapperProps {
   children: React.ReactNode;
-  refHeight: any;
+  refHeight?: any;
 }
 
 const HeaderWrapper = forwardRef(function HeaderWrapper({
@@ -13,7 +13,7 @@ const HeaderWrapper = forwardRef(function HeaderWrapper({
   return (
     <Flex
       minH="5em"
-      bg="#68A7AD"
+      bg="#58ABAE"
       color="white"
       alignItems="center"
       ref={refHeight}
