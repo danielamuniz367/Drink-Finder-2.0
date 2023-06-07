@@ -12,13 +12,13 @@ export interface DrinkProps {
   strIBA: string | null;
   strAlcoholic: string | null;
   strGlass: string;
-  strInstructions: string | null;
+  strInstructions: string;
   strInstructionsES: string | null;
   strInstructionsDE: string | null;
   strInstructionsFR: string | null;
   strInstructionsIT: string | null;
   "strInstructionsZH-HANT": string | null;
-  strDrinkThumb: string | undefined;
+  strDrinkThumb: string;
   strIngredient1: string | null;
   strIngredient2: string | null;
   strIngredient3: string | null;

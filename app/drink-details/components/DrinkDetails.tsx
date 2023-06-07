@@ -1,22 +1,14 @@
 "use client";
 
-import DrinkImageName from "@/app/components/DrinkImgName";
-import {
-  Box,
-  Card,
-  CardBody,
-  CardHeader,
-  Center,
-  Divider,
-  Stack,
-} from "@chakra-ui/react";
-import IngredientsSection from "./IngredientsSection";
-import Instructions from "./Instructions";
+import { Box, Center } from "@chakra-ui/react";
 import { DrinkProps } from "@/app/components/ResultsList";
 import BackButton from "./BackButton";
 import HeaderWrapper from "@/app/components/HeaderWrapper";
 import BodyWrapper from "@/app/components/BodyWrapper";
-import { useEffect, useRef, useState } from "react";
+import { ReactNode, use, useEffect, useRef, useState } from "react";
+import Loading from "@/app/components/Loading";
+import DrinkDetailsCard from "./DrinkDetailsCard";
+import { useMediaQuery } from "usehooks-ts";
 
 export interface IngredientsMeasurmentsProps {
   ingredient: string | null | undefined;
@@ -24,13 +16,13 @@ export interface IngredientsMeasurmentsProps {
 }
 
 export default function DrinkDetails(drinkDetails: DrinkProps) {
-  const [height, setHeight] = useState<string | undefined>(undefined);
+  const [height, setHeight] = useState<string | undefined>();
+  const [loading, setLoading] = useState<boolean>(true);
+  const mobile = useMediaQuery("(max-width: 30em)");
+
   const { strDrink, strDrinkThumb, strInstructions } = drinkDetails;
   const ref = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    setHeight(`calc(100vh - ${ref?.current?.clientHeight}px)`);
-  }, []);
+  let bodyChild: ReactNode = <></>;
 
   // gather ingredients and measurements
   const ingredients = Object.keys(drinkDetails)
@@ -52,39 +44,30 @@ export default function DrinkDetails(drinkDetails: DrinkProps) {
     ingredientsList.push(ingMsrObj);
   });
 
+  let props = {
+    height,
+    strDrink,
+    strDrinkThumb,
+    strInstructions,
+    ingredientsList,
+  };
+
+  useEffect(() => {
+    if (mobile) {
+      setHeight(`calc(100vh - ${ref?.current?.clientHeight}px)`);
+    }
+    setLoading(false);
+  });
+
+  bodyChild = loading ? <Loading /> : <DrinkDetailsCard {...props} />;
+
   return (
     <Box>
-      <HeaderWrapper refHeight={ref}>
+      <HeaderWrapper ref={ref}>
         <BackButton />
       </HeaderWrapper>
       <BodyWrapper>
-        <Center>
-          <Card
-            minH={[`${height}`, "unset"]}
-            m={[0, 8]}
-            p={[4, 8]}
-            borderRadius={["none", "lg"]}
-            bg="#FAF4F0"
-            w={["100%", "700px"]}
-          >
-            <CardHeader>
-              <DrinkImageName
-                strDrink={strDrink}
-                strDrinkThumb={strDrinkThumb}
-                result={true}
-              />
-            </CardHeader>
-            <Center>
-              <Divider borderColor="teal" />
-            </Center>
-            <CardBody>
-              <Stack spacing={4}>
-                <IngredientsSection list={ingredientsList} />
-                <Instructions strInstructions={strInstructions} />
-              </Stack>
-            </CardBody>
-          </Card>
-        </Center>
+        <Center>{bodyChild}</Center>
       </BodyWrapper>
     </Box>
   );

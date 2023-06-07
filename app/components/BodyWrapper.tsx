@@ -1,11 +1,10 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, ResponsiveValue } from "@chakra-ui/react";
+import { useEffect } from "react";
 
 interface BodyWrapperProps {
-  height?: string | null;
   children: React.ReactNode;
 }
 
-export default function BodyWrapper({ children, height }: BodyWrapperProps) {
-  console.log(height);
+export default function BodyWrapper({ children }: BodyWrapperProps) {
   return <Flex direction="column">{children}</Flex>;
 }
