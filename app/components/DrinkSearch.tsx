@@ -34,7 +34,7 @@ export default function DrinkSearch() {
         <Header />
       </HeaderWrapper>
       <BodyWrapper>
-        <SearchBar searchText={search} onSearchTextChange={setSearch} />
+        <SearchBar onSearchTextChange={setSearch} />
         {result}
       </BodyWrapper>
     </Box>

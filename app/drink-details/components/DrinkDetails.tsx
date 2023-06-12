@@ -57,7 +57,7 @@ export default function DrinkDetails(drinkDetails: DrinkProps) {
       setHeight(`calc(100vh - ${ref?.current?.clientHeight}px)`);
     }
     setLoading(false);
-  });
+  }, []);
 
   bodyChild = loading ? <Loading /> : <DrinkDetailsCard {...props} />;
 

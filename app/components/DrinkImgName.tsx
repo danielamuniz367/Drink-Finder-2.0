@@ -22,7 +22,12 @@ export default function DrinkImageName({
 
   return (
     <Flex direction={direction} gap={2} alignItems="center">
-      <Image borderRadius="full" boxSize={boxSize} src={strDrinkThumb} />
+      <Image
+        borderRadius="full"
+        boxSize={boxSize}
+        src={strDrinkThumb}
+        alt={`Image of ${strDrink} drink`}
+      />
       {name}
     </Flex>
   );
