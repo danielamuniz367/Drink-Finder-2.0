@@ -7,7 +7,7 @@ interface BodyWrapperProps {
 
 export default function BodyWrapper({ children }: BodyWrapperProps) {
   return (
-    <Flex direction="column" w="500px" m="auto">
+    <Flex direction="column" w={{ base: "100%", md: "500px" }} m="auto">
       {children}
     </Flex>
   );

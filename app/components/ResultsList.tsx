@@ -1,5 +1,6 @@
 import { Box, UnorderedList } from "@chakra-ui/react";
 import Result from "./Result";
+import { List } from "react-virtualized";
 
 export interface DrinkProps {
   [key: string]: string | undefined | null;
