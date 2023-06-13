@@ -6,5 +6,9 @@ interface BodyWrapperProps {
 }
 
 export default function BodyWrapper({ children }: BodyWrapperProps) {
-  return <Flex direction="column">{children}</Flex>;
+  return (
+    <Flex direction="column" w="500px" m="auto">
+      {children}
+    </Flex>
+  );
 }

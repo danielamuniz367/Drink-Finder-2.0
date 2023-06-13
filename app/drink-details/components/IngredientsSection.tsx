@@ -1,10 +1,4 @@
-import {
-  Flex,
-  Heading,
-  ListItem,
-  Stack,
-  UnorderedList,
-} from "@chakra-ui/react";
+import { Heading, ListItem, Stack, UnorderedList } from "@chakra-ui/react";
 import { IngredientsMeasurmentsProps } from "./DrinkDetails";
 
 export interface IngredientsMeasurmentsListProps {

@@ -27,6 +27,7 @@ export default function DrinkImageName({
         boxSize={boxSize}
         src={strDrinkThumb}
         alt={`Image of ${strDrink} drink`}
+        fallbackSrc="https://via.placeholder.com/50"
       />
       {name}
     </Flex>

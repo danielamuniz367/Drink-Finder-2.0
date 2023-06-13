@@ -7,7 +7,7 @@ interface SearchBarProps {
 
 export default function SearchBar({ onSearchTextChange }: SearchBarProps) {
   return (
-    <InputGroup m="auto" mt={[0, "20px"]} w={["100%", 500]} alignItems="center">
+    <InputGroup alignItems="center" pt="20px">
       {" "}
       <Input
         bg="white"

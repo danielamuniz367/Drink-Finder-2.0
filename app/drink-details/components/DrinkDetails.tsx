@@ -5,7 +5,7 @@ import { DrinkProps } from "@/app/components/ResultsList";
 import BackButton from "./BackButton";
 import HeaderWrapper from "@/app/components/HeaderWrapper";
 import BodyWrapper from "@/app/components/BodyWrapper";
-import { ReactNode, use, useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import Loading from "@/app/components/Loading";
 import DrinkDetailsCard from "./DrinkDetailsCard";
 import { useMediaQuery } from "usehooks-ts";

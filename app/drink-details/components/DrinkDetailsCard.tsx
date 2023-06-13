@@ -31,7 +31,6 @@ export default function DrinkDetailsCard({
   return (
     <Card
       minH={[`${height || "unset"}`]}
-      // h={["100%", "unset"]}
       m={[0, 8]}
       p={[4, 8]}
       borderRadius={["none", "lg"]}
