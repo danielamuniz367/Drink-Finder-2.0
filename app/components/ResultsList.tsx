@@ -1,6 +1,6 @@
 import { Box, UnorderedList } from "@chakra-ui/react";
 import Result from "./Result";
-import { List } from "react-virtualized";
+import { List, AutoSizer, ListRowRenderer } from "react-virtualized";
 
 export interface DrinkProps {
   [key: string]: string | undefined | null;
@@ -61,9 +61,37 @@ export interface ResultsProps {
 }
 export default function ResultsList({ drinks }: ResultsProps) {
   if (!drinks) return <Box m="0">No drinks found</Box>;
-  const listItems = drinks?.map((drink, i) => (
-    <Result key={`drink-${i}`} {...drink} />
-  ));
 
-  return <UnorderedList m={0}>{listItems}</UnorderedList>;
+  const resultRowRenderer: ListRowRenderer = ({
+    key,
+    index,
+    style,
+    parent,
+  }) => {
+    const result = drinks[index];
+
+    return (
+      <div style={style}>
+        <Result key={`drink-${key}`} {...result} />
+      </div>
+    );
+  };
+
+  return (
+    <div style={{ width: "100%", height: "calc(100vh - 156px)" }}>
+      <AutoSizer>
+        {({ width, height }) => (
+          <UnorderedList m={0}>
+            <List
+              width={width}
+              height={height}
+              rowHeight={56}
+              rowCount={drinks.length}
+              rowRenderer={resultRowRenderer}
+            ></List>
+          </UnorderedList>
+        )}
+      </AutoSizer>
+    </div>
+  );
 }
