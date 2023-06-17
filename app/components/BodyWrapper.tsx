@@ -1,5 +1,4 @@
-import { Flex, ResponsiveValue } from "@chakra-ui/react";
-import { useEffect } from "react";
+import { Box } from "@chakra-ui/react";
 
 interface BodyWrapperProps {
   children: React.ReactNode;
@@ -7,8 +6,8 @@ interface BodyWrapperProps {
 
 export default function BodyWrapper({ children }: BodyWrapperProps) {
   return (
-    <Flex direction="column" w={{ base: "100%", md: "75%" }} m="auto">
+    <Box p={{ base: "20px", sm: "20px 100px" }} h="calc(100% - 88px)">
       {children}
-    </Flex>
+    </Box>
   );
 }

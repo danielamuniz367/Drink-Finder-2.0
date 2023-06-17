@@ -62,7 +62,7 @@ export default function DrinkDetails(drinkDetails: DrinkProps) {
   bodyChild = loading ? <Loading /> : <DrinkDetailsCard {...props} />;
 
   return (
-    <Box>
+    <Box h="100%">
       <HeaderWrapper ref={ref}>
         <BackButton />
       </HeaderWrapper>
