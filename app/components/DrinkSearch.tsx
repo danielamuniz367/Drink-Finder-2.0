@@ -30,24 +30,7 @@ export default function DrinkSearch() {
   if (data && debouncedValue) result = <ResultsList drinks={drinks} />;
 
   return (
-    <Box
-      h="100%"
-      sx={{
-        height: "100vh",
-        width: "100%",
-      }}
-      _before={{
-        content: `""`,
-        backgroundImage: `url(${bg.src})`,
-        backgroundSize: "cover",
-        position: "absolute",
-        top: "0px",
-        right: "0px",
-        bottom: "0px",
-        left: "0px",
-        filter: "brightness(40%)",
-      }}
-    >
+    <Box h="100%">
       <HeaderWrapper>
         <Header />
       </HeaderWrapper>

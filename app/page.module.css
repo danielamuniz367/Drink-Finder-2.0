@@ -2,6 +2,19 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: "100%";
   font-family: var(--font-mono);
   background-color: #cae6e2;
+}
+
+.main::before {
+  content: "";
+  background-image: url(../public/multi-cocktails.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: brightness(40%);
 }
