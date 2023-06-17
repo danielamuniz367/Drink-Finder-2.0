@@ -60,7 +60,12 @@ export interface ResultsProps {
   drinks: DrinkProps[];
 }
 export default function ResultsList({ drinks }: ResultsProps) {
-  if (!drinks) return <Box m="0">No drinks found</Box>;
+  if (!drinks)
+    return (
+      <Box m="0" color="white">
+        No drinks found
+      </Box>
+    );
 
   const resultRowRenderer: ListRowRenderer = ({
     key,
