@@ -5,8 +5,8 @@ import CocktailIcon from "./CocktailIcon";
 
 export default function Header() {
   return (
-    <Heading m="1rem">
-      <Flex gap={2} align="center">
+    <Heading as="h3" size="xl">
+      <Flex gap={2} align="flex-end">
         <i style={{ color: "pink" }}>
           <CocktailIcon width="48px" height="48px" backgroundColor="white" />
         </i>
