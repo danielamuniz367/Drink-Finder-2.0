@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { Ref, forwardRef } from "react";
 
 interface HeaderWrapperProps {
@@ -10,7 +10,19 @@ const HeaderWrapper = forwardRef(function HeaderWrapper(
   ref: Ref<HTMLDivElement> | undefined
 ) {
   return (
-    <Flex minH="5em" bg="#58ABAE" color="white" alignItems="center" ref={ref}>
+    <Flex
+      alignItems="center"
+      minH="5em"
+      bg="#015a6c"
+      color="white"
+      m={0}
+      p={{ base: "10px", md: "20px" }}
+      position="sticky"
+      top={0}
+      ref={ref}
+      w="100%"
+      zIndex="5"
+    >
       {children}
     </Flex>
   );

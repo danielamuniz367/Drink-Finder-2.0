@@ -83,7 +83,13 @@ export default function ResultsList({ drinks }: ResultsProps) {
   };
 
   return (
-    <div style={{ width: "100%", height: "calc(100vh - 156px)" }}>
+    <div
+      style={{
+        width: "100%",
+        height: "400px",
+        backgroundColor: "#FAF4F0",
+      }}
+    >
       <AutoSizer>
         {({ width, height }) => (
           <UnorderedList m={0}>
