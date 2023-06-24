@@ -10,7 +10,6 @@ import HeaderWrapper from "./HeaderWrapper";
 import BodyWrapper from "./BodyWrapper";
 import Loading from "./Loading";
 import Error from "./Error";
-import bg from "../../public/multi-cocktails.jpg";
 
 const fetcher = (url: RequestInfo | URL) =>
   fetch(url).then((res) => res.json());
@@ -40,6 +39,7 @@ export default function DrinkSearch() {
           position={{ base: "relative" }}
           top={{ base: "unset", sm: "25%" }}
           zIndex={1}
+          p={{ base: "20px" }}
         >
           <Heading as="h3" color="white" pb="20px" size="lg">
             Your next thirst-quenching beverage awaits!

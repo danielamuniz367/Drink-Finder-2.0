@@ -21,7 +21,7 @@ const HeaderWrapper = forwardRef(function HeaderWrapper(
       top={0}
       ref={ref}
       w="100%"
-      zIndex="5"
+      zIndex="2"
     >
       {children}
     </Flex>

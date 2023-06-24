@@ -22,8 +22,6 @@ export default function DrinkDetails(drinkDetails: DrinkProps) {
 
   const { strDrink, strDrinkThumb, strInstructions } = drinkDetails;
   const ref = useRef<HTMLInputElement>(null);
-  let bodyChild: ReactNode = <></>;
-
   // gather ingredients and measurements
   const ingredients = Object.keys(drinkDetails)
     .filter((key) => key.includes("strIngredient") && drinkDetails[key])
@@ -52,14 +50,19 @@ export default function DrinkDetails(drinkDetails: DrinkProps) {
     ingredientsList,
   };
 
+  let bodyChild: ReactNode = loading ? (
+    <Loading />
+  ) : (
+    <DrinkDetailsCard {...props} />
+  );
+
   useEffect(() => {
     if (mobile) {
       setHeight(`calc(100vh - ${ref?.current?.clientHeight}px)`);
     }
     setLoading(false);
+    console.log("here");
   }, []);
-
-  bodyChild = loading ? <Loading /> : <DrinkDetailsCard {...props} />;
 
   return (
     <Box h="100%">
