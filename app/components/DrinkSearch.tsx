@@ -29,7 +29,7 @@ export default function DrinkSearch() {
   if (data && debouncedValue) result = <ResultsList drinks={drinks} />;
 
   return (
-    <Box h="100%">
+    <Box h="100vh">
       <HeaderWrapper>
         <Header />
       </HeaderWrapper>
