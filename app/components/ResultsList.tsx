@@ -86,7 +86,7 @@ export default function ResultsList({ drinks }: ResultsProps) {
     <div
       style={{
         width: "100%",
-        height: "400px",
+        height: "300px",
         backgroundColor: "#FAF4F0",
       }}
     >
