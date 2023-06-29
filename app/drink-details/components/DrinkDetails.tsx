@@ -5,7 +5,7 @@ import { DrinkProps } from "@/app/components/ResultsList";
 import BackButton from "./BackButton";
 import HeaderWrapper from "@/app/components/HeaderWrapper";
 import BodyWrapper from "@/app/components/BodyWrapper";
-import { ReactNode, useLayoutEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Loading from "@/app/components/Loading";
 import DrinkDetailsCard from "./DrinkDetailsCard";
 import { useMediaQuery } from "usehooks-ts";
@@ -16,9 +16,9 @@ export interface IngredientsMeasurmentsProps {
 }
 
 export default function DrinkDetails(drinkDetails: DrinkProps) {
-  const [height, setHeight] = useState<string | undefined>("100vh");
-  const mobile = useMediaQuery("(max-width: 30em)");
+  const [height, setHeight] = useState<string | undefined>("auto");
   const [bodyChild, setBodyChild] = useState<ReactNode>(<Loading />);
+  const mobile = useMediaQuery("(max-width: 30em)");
 
   const { strDrink, strDrinkThumb, strInstructions } = drinkDetails;
   const ref = useRef<HTMLInputElement>(null);
@@ -52,10 +52,14 @@ export default function DrinkDetails(drinkDetails: DrinkProps) {
 
   useLayoutEffect(() => {
     mobile
-      ? setHeight(`calc(${height} - ${ref?.current?.clientHeight}px)`)
-      : setHeight("100vh");
-    setBodyChild(<DrinkDetailsCard {...props} />);
+      ? setHeight(`calc(100vh - ${ref?.current?.clientHeight}px)`)
+      : setHeight("auto");
   }, [mobile]);
+
+  useEffect(() => {
+    props.height = height;
+    setBodyChild(<DrinkDetailsCard {...props} />);
+  }, [height]);
 
   return (
     <Box h="100%">
